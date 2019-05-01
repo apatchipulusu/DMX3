@@ -18235,7 +18235,7 @@ void EUSART1_Initialize(void)
     TX1STA = 0x04;
 
 
-    SP1BRGL = 0x03;
+    SP1BRGL = 0x1F;
 
 
     SP1BRGH = 0x00;

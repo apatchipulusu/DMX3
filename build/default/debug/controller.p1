@@ -1,253 +1,31 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"5064 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 5064: extern volatile unsigned short SP1BRG __attribute__((address(0x11B)));
-[v _SP1BRG `Vus ~T0 @X0 0 e@283 ]
-"5390
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 5390:     struct {
-[s S246 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S246 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
-"5389
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 5389: typedef union {
-[u S245 `S246 1 ]
-[n S245 . . ]
-"5401
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 5401: extern volatile TX1STAbits_t TX1STAbits __attribute__((address(0x11E)));
-[v _TX1STAbits `VS245 ~T0 @X0 0 e@286 ]
-"5578
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 5578:     struct {
-[s S252 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S252 . ABDEN WUE . BRG16 SCKP . RCIDL ABDOVF ]
-"5577
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 5577: typedef union {
-[u S251 `S252 1 ]
-[n S251 . . ]
-"5589
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 5589: extern volatile BAUD1CONbits_t BAUD1CONbits __attribute__((address(0x11F)));
-[v _BAUD1CONbits `VS251 ~T0 @X0 0 e@287 ]
-"29193
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 29193: extern volatile unsigned char RX1PPS __attribute__((address(0x1ECB)));
-[v _RX1PPS `Vuc ~T0 @X0 0 e@7883 ]
-"5210
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 5210:     struct {
-[s S240 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S240 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
-"5209
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 5209: typedef union {
-[u S239 `S240 1 ]
-[n S239 . . ]
-"5221
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 5221: extern volatile RC1STAbits_t RC1STAbits __attribute__((address(0x11D)));
-[v _RC1STAbits `VS239 ~T0 @X0 0 e@285 ]
-"38986
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 38986: extern volatile __bit TRISB4 __attribute__((address(0x9C)));
-[v _TRISB4 `Vb ~T0 @X0 0 e@156 ]
-"30948
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30948: extern volatile unsigned char ANSELB __attribute__((address(0x1F43)));
-[v _ANSELB `Vuc ~T0 @X0 0 e@8003 ]
-"19403
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 19403:     struct {
-[s S905 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S905 . SSP1IE BCL1IE SSP2IE BCL2IE TX1IE RC1IE ]
-"19402
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 19402: typedef union {
-[u S904 `S905 1 ]
-[n S904 . . ]
-"19412
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 19412: extern volatile PIE3bits_t PIE3bits __attribute__((address(0x719)));
-[v _PIE3bits `VS904 ~T0 @X0 0 e@1817 ]
-"419
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 419:     struct {
-[s S31 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . INTEDG . PEIE GIE ]
-"418
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 418: typedef union {
-[u S30 `S31 1 ]
-[n S30 . . ]
-"426
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"12127
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12127:     struct {
-[s S568 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S568 . MODE FMT OUT . EN ]
-"12134
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12134:     struct {
-[s S569 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S569 . MODE0 MODE1 MODE2 MODE3 ]
-"12140
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12140:     struct {
-[s S570 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S570 . CCP1MODE CCP1FMT CCP1OUT . CCP1EN ]
-"12147
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12147:     struct {
-[s S571 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S571 . CCP1MODE0 CCP1MODE1 CCP1MODE2 CCP1MODE3 ]
-"12153
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12153:     struct {
-[s S572 :7 `uc 1 :1 `uc 1 ]
-[n S572 . . P1M1 ]
-"12126
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12126: typedef union {
-[u S567 `S568 1 `S569 1 `S570 1 `S571 1 `S572 1 ]
-[n S567 . . . . . . ]
-"12158
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12158: extern volatile CCP1CONbits_t CCP1CONbits __attribute__((address(0x30E)));
-[v _CCP1CONbits `VS567 ~T0 @X0 0 e@782 ]
-"12369
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12369:     struct {
-[s S583 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S583 . MODE FMT OUT . EN ]
-"12376
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12376:     struct {
-[s S584 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S584 . MODE0 MODE1 MODE2 MODE3 ]
-"12382
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12382:     struct {
-[s S585 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S585 . CCP2MODE CCP2FMT CCP2OUT . CCP2EN ]
-"12389
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12389:     struct {
-[s S586 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S586 . CCP2MODE0 CCP2MODE1 CCP2MODE2 CCP2MODE3 ]
-"12395
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12395:     struct {
-[s S587 :7 `uc 1 :1 `uc 1 ]
-[n S587 . . P2M1 ]
-"12368
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12368: typedef union {
-[u S582 `S583 1 `S584 1 `S585 1 `S586 1 `S587 1 ]
-[n S582 . . . . . . ]
-"12400
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12400: extern volatile CCP2CONbits_t CCP2CONbits __attribute__((address(0x312)));
-[v _CCP2CONbits `VS582 ~T0 @X0 0 e@786 ]
-"12611
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12611:     struct {
-[s S598 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S598 . MODE FMT OUT . EN ]
-"12618
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12618:     struct {
-[s S599 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S599 . MODE0 MODE1 MODE2 MODE3 ]
-"12624
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12624:     struct {
-[s S600 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S600 . CCP3MODE CCP3FMT CCP3OUT . CCP3EN ]
-"12631
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12631:     struct {
-[s S601 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S601 . CCP3MODE0 CCP3MODE1 CCP3MODE2 CCP3MODE3 ]
-"12637
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12637:     struct {
-[s S602 :7 `uc 1 :1 `uc 1 ]
-[n S602 . . P3M1 ]
-"12610
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12610: typedef union {
-[u S597 `S598 1 `S599 1 `S600 1 `S601 1 `S602 1 ]
-[n S597 . . . . . . ]
-"12642
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12642: extern volatile CCP3CONbits_t CCP3CONbits __attribute__((address(0x316)));
-[v _CCP3CONbits `VS597 ~T0 @X0 0 e@790 ]
-"12853
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12853:     struct {
-[s S613 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S613 . MODE FMT OUT . EN ]
-"12860
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12860:     struct {
-[s S614 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S614 . MODE0 MODE1 MODE2 MODE3 ]
-"12866
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12866:     struct {
-[s S615 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S615 . CCP4MODE CCP4FMT CCP4OUT . CCP4EN ]
-"12873
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12873:     struct {
-[s S616 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S616 . CCP4MODE0 CCP4MODE1 CCP4MODE2 CCP4MODE3 ]
-"12879
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12879:     struct {
-[s S617 :7 `uc 1 :1 `uc 1 ]
-[n S617 . . P4M1 ]
-"12852
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12852: typedef union {
-[u S612 `S613 1 `S614 1 `S615 1 `S616 1 `S617 1 ]
-[n S612 . . . . . . ]
-"12884
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12884: extern volatile CCP4CONbits_t CCP4CONbits __attribute__((address(0x31A)));
-[v _CCP4CONbits `VS612 ~T0 @X0 0 e@794 ]
-"10767
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 10767: extern volatile unsigned char T2CLKCON __attribute__((address(0x290)));
-[v _T2CLKCON `Vuc ~T0 @X0 0 e@656 ]
-"39019
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 39019: extern volatile __bit TRISC7 __attribute__((address(0xA7)));
-[v _TRISC7 `Vb ~T0 @X0 0 e@167 ]
-"39016
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 39016: extern volatile __bit TRISC6 __attribute__((address(0xA6)));
-[v _TRISC6 `Vb ~T0 @X0 0 e@166 ]
-"39007
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 39007: extern volatile __bit TRISC3 __attribute__((address(0xA3)));
-[v _TRISC3 `Vb ~T0 @X0 0 e@163 ]
-"39010
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 39010: extern volatile __bit TRISC4 __attribute__((address(0xA4)));
-[v _TRISC4 `Vb ~T0 @X0 0 e@164 ]
-"30505
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30505: extern volatile unsigned char RC7PPS __attribute__((address(0x1F27)));
-[v _RC7PPS `Vuc ~T0 @X0 0 e@7975 ]
-"30447
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30447: extern volatile unsigned char RC6PPS __attribute__((address(0x1F26)));
-[v _RC6PPS `Vuc ~T0 @X0 0 e@7974 ]
-"30273
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30273: extern volatile unsigned char RC3PPS __attribute__((address(0x1F23)));
-[v _RC3PPS `Vuc ~T0 @X0 0 e@7971 ]
-"30331
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30331: extern volatile unsigned char RC4PPS __attribute__((address(0x1F24)));
-[v _RC4PPS `Vuc ~T0 @X0 0 e@7972 ]
-"12101
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12101: extern volatile unsigned char CCPR1H __attribute__((address(0x30D)));
-[v _CCPR1H `Vuc ~T0 @X0 0 e@781 ]
-"12081
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12081: extern volatile unsigned char CCPR1L __attribute__((address(0x30C)));
-[v _CCPR1L `Vuc ~T0 @X0 0 e@780 ]
-"12343
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12343: extern volatile unsigned char CCPR2H __attribute__((address(0x311)));
-[v _CCPR2H `Vuc ~T0 @X0 0 e@785 ]
-"12323
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12323: extern volatile unsigned char CCPR2L __attribute__((address(0x310)));
-[v _CCPR2L `Vuc ~T0 @X0 0 e@784 ]
-"12585
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12585: extern volatile unsigned char CCPR3H __attribute__((address(0x315)));
-[v _CCPR3H `Vuc ~T0 @X0 0 e@789 ]
-"12565
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12565: extern volatile unsigned char CCPR3L __attribute__((address(0x314)));
-[v _CCPR3L `Vuc ~T0 @X0 0 e@788 ]
-"12827
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12827: extern volatile unsigned char CCPR4H __attribute__((address(0x319)));
-[v _CCPR4H `Vuc ~T0 @X0 0 e@793 ]
-"12807
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 12807: extern volatile unsigned char CCPR4L __attribute__((address(0x318)));
-[v _CCPR4L `Vuc ~T0 @X0 0 e@792 ]
-"10499
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 10499:     struct {
-[s S478 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S478 . OUTPS CKPS ON ]
-"10504
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 10504:     struct {
-[s S479 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S479 . OUTPS0 OUTPS1 OUTPS2 OUTPS3 CKPS0 CKPS1 CKPS2 ]
-"10513
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 10513:     struct {
-[s S480 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S480 . T2OUTPS T2CKPS T2ON ]
-"10518
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 10518:     struct {
-[s S481 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S481 . T2OUTPS0 T2OUTPS1 T2OUTPS2 T2OUTPS3 T2CKPS0 T2CKPS1 T2CKPS2 TMR2ON ]
-"10498
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 10498: typedef union {
-[u S477 `S478 1 `S479 1 `S480 1 `S481 1 ]
-[n S477 . . . . . ]
-"10529
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 10529: extern volatile T2CONbits_t T2CONbits __attribute__((address(0x28E)));
-[v _T2CONbits `VS477 ~T0 @X0 0 e@654 ]
+"62 ./buttons.h
+[; ;./buttons.h: 62: button_t buttons[4];
+[c E10874 0 1 .. ]
+[n E10874 . STATE_UNPRESSED STATE_PRESSED  ]
+[c E10869 0 1 2 .. ]
+[n E10869 . EVENT_IDLE EVENT_PRESSED EVENT_HELD  ]
+"52
+[; ;./buttons.h: 52: typedef struct {
+[s S1513 `*Vuc 1 `uc 1 `E10874 1 `E10874 1 `E10869 1 `us 1 ]
+[n S1513 . port pin state lastState event time ]
+[v F11010 `(v ~T0 @X0 0 tf ]
+[v F11012 `(v ~T0 @X0 0 tf ]
+"50 ./tm1650.h
+[; ;./tm1650.h: 50: void TM1650_fastPrintNum(uint16_t num);
+[v _TM1650_fastPrintNum `(v ~T0 @X0 0 ef1`us ]
+"69 ./buttons.h
+[; ;./buttons.h: 69: _Bool BUTTONS_isClicked(button_t* button);
+[v _BUTTONS_isClicked `(a ~T0 @X0 0 ef1`*S1513 ]
+"70
+[; ;./buttons.h: 70: _Bool BUTTONS_isHeld(button_t* button);
+[v _BUTTONS_isHeld `(a ~T0 @X0 0 ef1`*S1513 ]
+"51 ./tm1650.h
+[; ;./tm1650.h: 51: void TM1650_enable(_Bool enable);
+[v _TM1650_enable `(v ~T0 @X0 0 ef1`a ]
+"39 ./clock.h
+[; ;./clock.h: 39: time_t CLOCK_getTime();
+[v _CLOCK_getTime `(us ~T0 @X0 0 e? ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1610,230 +1388,202 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32039
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 32039: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"65 ./DMX_Source.h
-[; ;./DMX_Source.h: 65: uint8_t input[513];
-[v _input `uc ~T0 @X0 -> 513 `i e ]
-"67
-[; ;./DMX_Source.h: 67: int point;
-[v _point `i ~T0 @X0 1 e ]
-"13 DMX_Source.c
-[; ;DMX_Source.c: 13: void UART_init(){
-[v _UART_init `(v ~T0 @X0 1 ef ]
+"62 ./buttons.h
+[; ;./buttons.h: 62: button_t buttons[4];
+[v _buttons `S1513 ~T0 @X0 -> 4 `i e ]
+"64
+[; ;./buttons.h: 64: button_t *up, *down, *enter, *menu;
+[v _up `*S1513 ~T0 @X0 1 e ]
+[v _down `*S1513 ~T0 @X0 1 e ]
+[v _enter `*S1513 ~T0 @X0 1 e ]
+[v _menu `*S1513 ~T0 @X0 1 e ]
+"95 ./mcc_generated_files/eusart1.h
+[; ;./mcc_generated_files/eusart1.h: 95: void (*EUSART1_TxDefaultInterruptHandler)(void);
+[v _EUSART1_TxDefaultInterruptHandler `*F11010 ~T0 @X0 1 e ]
+"96
+[; ;./mcc_generated_files/eusart1.h: 96: void (*EUSART1_RxDefaultInterruptHandler)(void);
+[v _EUSART1_RxDefaultInterruptHandler `*F11012 ~T0 @X0 1 e ]
+"53 ./tm1650.h
+[; ;./tm1650.h: 53: int count = 0;
+[v _count `i ~T0 @X0 1 e ]
+[i _count
+-> 0 `i
+]
+"54
+[; ;./tm1650.h: 54: _Bool displayState;
+[v _displayState `a ~T0 @X0 1 e ]
+"37 ./controller.h
+[; ;./controller.h: 37: uint16_t address = 1;
+[v _address `us ~T0 @X0 1 e ]
+[i _address
+-> -> 1 `i `us
+]
+"43
+[; ;./controller.h: 43: time_t lastActiveTime;
+[v _lastActiveTime `us ~T0 @X0 1 e ]
+"13 controller.c
+[; ;controller.c: 13: void CONTROLLER_init() {
+[v _CONTROLLER_init `(v ~T0 @X0 1 ef ]
 {
-[e :U _UART_init ]
+[e :U _CONTROLLER_init ]
 [f ]
 "14
-[; ;DMX_Source.c: 14:     SP1BRG = 0x03;
-[e = _SP1BRG -> -> 3 `i `us ]
-"16
-[; ;DMX_Source.c: 16:     TX1STAbits.BRGH = 1;
-[e = . . _TX1STAbits 0 2 -> -> 1 `i `uc ]
-"17
-[; ;DMX_Source.c: 17:     BAUD1CONbits.BRG16 = 1;
-[e = . . _BAUD1CONbits 0 3 -> -> 1 `i `uc ]
+[; ;controller.c: 14:     TM1650_fastPrintNum(address);
+[e ( _TM1650_fastPrintNum (1 _address ]
+"15
+[; ;controller.c: 15: }
+[e :UE 1520 ]
+}
 "20
-[; ;DMX_Source.c: 20:     RX1PPS = 0b00001100;
-[e = _RX1PPS -> -> 12 `i `uc ]
+[; ;controller.c: 20: void address_inc()
+[v _address_inc `(v ~T0 @X0 1 ef ]
+"21
+[; ;controller.c: 21: {
+{
+[e :U _address_inc ]
+[f ]
 "22
-[; ;DMX_Source.c: 22:     TX1STAbits.SYNC = 0;
-[e = . . _TX1STAbits 0 4 -> -> 0 `i `uc ]
+[; ;controller.c: 22:     if(address == 512)
+[e $ ! == -> _address `ui -> -> 512 `i `ui 1522  ]
+"23
+[; ;controller.c: 23:         address = 1;
+[e = _address -> -> 1 `i `us ]
+[e $U 1523  ]
 "24
-[; ;DMX_Source.c: 24:     RC1STAbits.SPEN = 1;
-[e = . . _RC1STAbits 0 7 -> -> 1 `i `uc ]
-"26
-[; ;DMX_Source.c: 26:     RC1STAbits.RX9 = 0;
-[e = . . _RC1STAbits 0 6 -> -> 0 `i `uc ]
-"27
-[; ;DMX_Source.c: 27:     RC1STAbits.CREN = 1;
-[e = . . _RC1STAbits 0 4 -> -> 1 `i `uc ]
+[; ;controller.c: 24:     else
+[e :U 1522 ]
+"25
+[; ;controller.c: 25:         address++;
+[e ++ _address -> -> 1 `i `us ]
+[e :U 1523 ]
 "28
-[; ;DMX_Source.c: 28:     TX1STAbits.TXEN = 0;
-[e = . . _TX1STAbits 0 5 -> -> 0 `i `uc ]
-"30
-[; ;DMX_Source.c: 30:     TRISB4 = 1;
-[e = _TRISB4 -> -> 1 `i `b ]
-"31
-[; ;DMX_Source.c: 31:     ANSELB = 0x00;
-[e = _ANSELB -> -> 0 `i `uc ]
-"33
-[; ;DMX_Source.c: 33:     point = 0;
-[e = _point -> 0 `i ]
+[; ;controller.c: 28:     TM1650_fastPrintNum(address);
+[e ( _TM1650_fastPrintNum (1 _address ]
+"29
+[; ;controller.c: 29: }
+[e :UE 1521 ]
+}
 "34
-[; ;DMX_Source.c: 34:     PIE3bits.RC1IE = 1;
-[e = . . _PIE3bits 0 5 -> -> 1 `i `uc ]
+[; ;controller.c: 34: void address_dec()
+[v _address_dec `(v ~T0 @X0 1 ef ]
 "35
-[; ;DMX_Source.c: 35:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+[; ;controller.c: 35: {
+{
+[e :U _address_dec ]
+[f ]
 "36
-[; ;DMX_Source.c: 36:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+[; ;controller.c: 36:     if(address == 1)
+[e $ ! == -> _address `ui -> -> 1 `i `ui 1525  ]
 "37
-[; ;DMX_Source.c: 37: }
-[e :UE 1515 ]
-}
+[; ;controller.c: 37:         address = 512;
+[e = _address -> -> 512 `i `us ]
+[e $U 1526  ]
+"38
+[; ;controller.c: 38:     else
+[e :U 1525 ]
 "39
-[; ;DMX_Source.c: 39: void LED_init(){
-[v _LED_init `(v ~T0 @X0 1 ef ]
-{
-[e :U _LED_init ]
-[f ]
-"40
-[; ;DMX_Source.c: 40:     CCP1CONbits.MODE = 0b1100;
-[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
-"41
-[; ;DMX_Source.c: 41:     CCP2CONbits.MODE = 0b1100;
-[e = . . _CCP2CONbits 0 0 -> -> 12 `i `uc ]
+[; ;controller.c: 39:         address--;
+[e -- _address -> -> 1 `i `us ]
+[e :U 1526 ]
 "42
-[; ;DMX_Source.c: 42:     CCP3CONbits.MODE = 0b1100;
-[e = . . _CCP3CONbits 0 0 -> -> 12 `i `uc ]
+[; ;controller.c: 42:     TM1650_fastPrintNum(address);
+[e ( _TM1650_fastPrintNum (1 _address ]
 "43
-[; ;DMX_Source.c: 43:     CCP4CONbits.MODE = 0b1100;
-[e = . . _CCP4CONbits 0 0 -> -> 12 `i `uc ]
+[; ;controller.c: 43: }
+[e :UE 1524 ]
+}
 "45
-[; ;DMX_Source.c: 45:     CCP1CONbits.CCP1EN = 1;
-[e = . . _CCP1CONbits 2 4 -> -> 1 `i `uc ]
+[; ;controller.c: 45: void CONTROLLER_task() {
+[v _CONTROLLER_task `(v ~T0 @X0 1 ef ]
+{
+[e :U _CONTROLLER_task ]
+[f ]
 "46
-[; ;DMX_Source.c: 46:     CCP2CONbits.CCP2EN = 1;
-[e = . . _CCP2CONbits 2 4 -> -> 1 `i `uc ]
+[; ;controller.c: 46:     _Bool active = 1;
+[v _active `a ~T0 @X0 1 a ]
+[e = _active -> -> 1 `i `a ]
 "47
-[; ;DMX_Source.c: 47:     CCP3CONbits.CCP3EN = 1;
-[e = . . _CCP3CONbits 2 4 -> -> 1 `i `uc ]
+[; ;controller.c: 47:     if (BUTTONS_isClicked(up)) {
+[e $ ! != -> ( _BUTTONS_isClicked (1 _up `i -> 0 `i 1528  ]
+{
 "48
-[; ;DMX_Source.c: 48:     CCP4CONbits.CCP4EN = 1;
-[e = . . _CCP4CONbits 2 4 -> -> 1 `i `uc ]
+[; ;controller.c: 48:         address_inc();
+[e ( _address_inc ..  ]
 "49
-[; ;DMX_Source.c: 49:     T2CLKCON = 0x01;
-[e = _T2CLKCON -> -> 1 `i `uc ]
+[; ;controller.c: 49:     }else if(BUTTONS_isHeld(up)){
+}
+[e $U 1529  ]
+[e :U 1528 ]
+[e $ ! != -> ( _BUTTONS_isHeld (1 _up `i -> 0 `i 1530  ]
+{
+"50
+[; ;controller.c: 50:         address_inc();
+[e ( _address_inc ..  ]
 "51
-[; ;DMX_Source.c: 51:     TRISC7 = 0;
-[e = _TRISC7 -> -> 0 `i `b ]
+[; ;controller.c: 51:     }else if(BUTTONS_isClicked(down)) {
+}
+[e $U 1531  ]
+[e :U 1530 ]
+[e $ ! != -> ( _BUTTONS_isClicked (1 _down `i -> 0 `i 1532  ]
+{
 "52
-[; ;DMX_Source.c: 52:     TRISC6 = 0;
-[e = _TRISC6 -> -> 0 `i `b ]
+[; ;controller.c: 52:         address_dec();
+[e ( _address_dec ..  ]
 "53
-[; ;DMX_Source.c: 53:     TRISC3 = 0;
-[e = _TRISC3 -> -> 0 `i `b ]
+[; ;controller.c: 53:     }else if(BUTTONS_isHeld(down)){
+}
+[e $U 1533  ]
+[e :U 1532 ]
+[e $ ! != -> ( _BUTTONS_isHeld (1 _down `i -> 0 `i 1534  ]
+{
 "54
-[; ;DMX_Source.c: 54:     TRISC4 = 0;
-[e = _TRISC4 -> -> 0 `i `b ]
+[; ;controller.c: 54:         address_dec();
+[e ( _address_dec ..  ]
+"55
+[; ;controller.c: 55:     }else{
+}
+[e $U 1535  ]
+[e :U 1534 ]
+{
 "56
-[; ;DMX_Source.c: 56:     RC7PPS = 0x09;
-[e = _RC7PPS -> -> 9 `i `uc ]
+[; ;controller.c: 56:         active = 0;
+[e = _active -> -> 0 `i `a ]
 "57
-[; ;DMX_Source.c: 57:     RC6PPS = 0x0A;
-[e = _RC6PPS -> -> 10 `i `uc ]
-"58
-[; ;DMX_Source.c: 58:     RC3PPS = 0x0B;
-[e = _RC3PPS -> -> 11 `i `uc ]
+[; ;controller.c: 57:     }
+}
+[e :U 1535 ]
+[e :U 1533 ]
+[e :U 1531 ]
+[e :U 1529 ]
 "59
-[; ;DMX_Source.c: 59:     RC4PPS = 0x0C;
-[e = _RC4PPS -> -> 12 `i `uc ]
+[; ;controller.c: 59:     if(active){
+[e $ ! != -> _active `i -> 0 `i 1536  ]
+{
+"60
+[; ;controller.c: 60:         TM1650_enable(1);
+[e ( _TM1650_enable (1 -> -> 1 `i `a ]
 "61
-[; ;DMX_Source.c: 61:     CCPR1H = 0x00;
-[e = _CCPR1H -> -> 0 `i `uc ]
+[; ;controller.c: 61:         lastActiveTime = CLOCK_getTime();
+[e = _lastActiveTime ( _CLOCK_getTime ..  ]
 "62
-[; ;DMX_Source.c: 62:     CCPR1L = 0x04;
-[e = _CCPR1L -> -> 4 `i `uc ]
+[; ;controller.c: 62:     }
+}
+[e :U 1536 ]
 "63
-[; ;DMX_Source.c: 63:     CCPR2H = 0x00;
-[e = _CCPR2H -> -> 0 `i `uc ]
+[; ;controller.c: 63:     if(CLOCK_getTime() - lastActiveTime >= 5000){
+[e $ ! >= - -> ( _CLOCK_getTime ..  `ui -> _lastActiveTime `ui -> -> 5000 `i `ui 1537  ]
+{
 "64
-[; ;DMX_Source.c: 64:     CCPR2L = 0x04;
-[e = _CCPR2L -> -> 4 `i `uc ]
+[; ;controller.c: 64:         TM1650_enable(0);
+[e ( _TM1650_enable (1 -> -> 0 `i `a ]
 "65
-[; ;DMX_Source.c: 65:     CCPR3H = 0x00;
-[e = _CCPR3H -> -> 0 `i `uc ]
+[; ;controller.c: 65:         lastActiveTime = CLOCK_getTime() - 5001;
+[e = _lastActiveTime -> - -> ( _CLOCK_getTime ..  `ui -> -> 5001 `i `ui `us ]
 "66
-[; ;DMX_Source.c: 66:     CCPR3L = 0x04;
-[e = _CCPR3L -> -> 4 `i `uc ]
+[; ;controller.c: 66:     }
+}
+[e :U 1537 ]
 "67
-[; ;DMX_Source.c: 67:     CCPR4H = 0x00;
-[e = _CCPR4H -> -> 0 `i `uc ]
-"68
-[; ;DMX_Source.c: 68:     CCPR4L = 0x04;
-[e = _CCPR4L -> -> 4 `i `uc ]
-"69
-[; ;DMX_Source.c: 69:     T2CONbits.ON = 1;
-[e = . . _T2CONbits 0 2 -> -> 1 `i `uc ]
-"70
-[; ;DMX_Source.c: 70: }
-[e :UE 1516 ]
-}
-"72
-[; ;DMX_Source.c: 72: void LED_setColor(uint8_t R, uint8_t G, uint8_t B, uint8_t W){
-[v _LED_setColor `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
-{
-[e :U _LED_setColor ]
-[v _R `uc ~T0 @X0 1 r1 ]
-[v _G `uc ~T0 @X0 1 r2 ]
-[v _B `uc ~T0 @X0 1 r3 ]
-[v _W `uc ~T0 @X0 1 r4 ]
-[f ]
-"73
-[; ;DMX_Source.c: 73:     if(R < 256 && G < 256 && B < 256 && W < 256){
-[e $ ! && && && < -> _R `i -> 256 `i < -> _G `i -> 256 `i < -> _B `i -> 256 `i < -> _W `i -> 256 `i 1518  ]
-{
-"74
-[; ;DMX_Source.c: 74:     R = ((float)R/2048)*(4000000/(122 * 32));
-[e = _R -> * / -> _R `f -> -> 2048 `i `f -> / -> 4000000 `l -> * -> 122 `i -> 32 `i `l `f `uc ]
-"75
-[; ;DMX_Source.c: 75:     G = ((float)G/2048)*(4000000/(122 * 32));
-[e = _G -> * / -> _G `f -> -> 2048 `i `f -> / -> 4000000 `l -> * -> 122 `i -> 32 `i `l `f `uc ]
-"76
-[; ;DMX_Source.c: 76:     B = ((float)B/2048)*(4000000/(122 * 32));
-[e = _B -> * / -> _B `f -> -> 2048 `i `f -> / -> 4000000 `l -> * -> 122 `i -> 32 `i `l `f `uc ]
-"77
-[; ;DMX_Source.c: 77:     W = ((float)W/2048)*(4000000/(122 * 32));
-[e = _W -> * / -> _W `f -> -> 2048 `i `f -> / -> 4000000 `l -> * -> 122 `i -> 32 `i `l `f `uc ]
-"78
-[; ;DMX_Source.c: 78:     CCPR1H = R >> 8;
-[e = _CCPR1H -> >> -> _R `i -> 8 `i `uc ]
-"79
-[; ;DMX_Source.c: 79:     CCPR1L = R;
-[e = _CCPR1L _R ]
-"80
-[; ;DMX_Source.c: 80:     CCPR2H = G >> 8;
-[e = _CCPR2H -> >> -> _G `i -> 8 `i `uc ]
-"81
-[; ;DMX_Source.c: 81:     CCPR2L = G;
-[e = _CCPR2L _G ]
-"82
-[; ;DMX_Source.c: 82:     CCPR3H = B >> 8;
-[e = _CCPR3H -> >> -> _B `i -> 8 `i `uc ]
-"83
-[; ;DMX_Source.c: 83:     CCPR3L = B;
-[e = _CCPR3L _B ]
-"84
-[; ;DMX_Source.c: 84:     CCPR4H = W >> 8;
-[e = _CCPR4H -> >> -> _W `i -> 8 `i `uc ]
-"85
-[; ;DMX_Source.c: 85:     CCPR4L = W;
-[e = _CCPR4L _W ]
-"86
-[; ;DMX_Source.c: 86:     }
-}
-[e :U 1518 ]
-"87
-[; ;DMX_Source.c: 87: }
-[e :UE 1517 ]
-}
-"89
-[; ;DMX_Source.c: 89: void LED_setBrightness(unsigned int duty){
-[v _LED_setBrightness `(v ~T0 @X0 1 ef1`ui ]
-{
-[e :U _LED_setBrightness ]
-[v _duty `ui ~T0 @X0 1 r1 ]
-[f ]
-"90
-[; ;DMX_Source.c: 90:     duty = ((float)duty/1024)*(4000000/(122 * 32));
-[e = _duty -> * / -> _duty `f -> -> 1024 `i `f -> / -> 4000000 `l -> * -> 122 `i -> 32 `i `l `f `ui ]
-"91
-[; ;DMX_Source.c: 91:     CCPR1H = duty >> 8;
-[e = _CCPR1H -> >> _duty -> 8 `i `uc ]
-"92
-[; ;DMX_Source.c: 92:     CCPR1L = duty;
-[e = _CCPR1L -> _duty `uc ]
-"93
-[; ;DMX_Source.c: 93: }
-[e :UE 1519 ]
+[; ;controller.c: 67: }
+[e :UE 1527 ]
 }

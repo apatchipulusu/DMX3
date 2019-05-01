@@ -1,4 +1,4 @@
-# 1 "DMX_Source.c"
+# 1 "controller.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "DMX_Source.c" 2
+# 1 "controller.c" 2
 
 
 
@@ -15,8 +15,6 @@
 
 
 
-# 1 "./DMX_Source.h" 1
-# 40 "./DMX_Source.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -18056,8 +18054,13 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 40 "./DMX_Source.h" 2
+# 9 "controller.c" 2
 
+
+# 1 "./controller.h" 1
+# 33 "./controller.h"
+# 1 "./buttons.h" 1
+# 36 "./buttons.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -18141,7 +18144,284 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 41 "./DMX_Source.h" 2
+# 36 "./buttons.h" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
+# 37 "./buttons.h" 2
+
+# 1 "./clock.h" 1
+# 36 "./clock.h"
+typedef uint16_t time_t;
+
+void CLOCK_init();
+time_t CLOCK_getTime();
+extern time_t ClockCurrentTime;
+# 38 "./buttons.h" 2
+
+
+
+typedef enum {
+    EVENT_IDLE,
+    EVENT_PRESSED,
+    EVENT_HELD
+} event_t;
+
+typedef enum {
+    STATE_UNPRESSED,
+    STATE_PRESSED
+} btnState_t;
+
+typedef struct {
+    volatile uint8_t* port;
+    uint8_t pin;
+    btnState_t state;
+    btnState_t lastState;
+    event_t event;
+    time_t time;
+} button_t;
+
+
+button_t buttons[4];
+
+button_t *up, *down, *enter, *menu;
+
+void BUTTONS_task();
+void BUTTONS_init();
+static void init(button_t* btn, volatile uint8_t* port, uint8_t pin);
+_Bool BUTTONS_isClicked(button_t* button);
+_Bool BUTTONS_isHeld(button_t* button);
+# 33 "./controller.h" 2
+
+
+# 1 "./tm1650.h" 1
+# 34 "./tm1650.h"
+# 1 "./mcc_generated_files/mcc.h" 1
+# 50 "./mcc_generated_files/mcc.h"
+# 1 "./mcc_generated_files/device_config.h" 1
+# 50 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 242 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 254 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 51 "./mcc_generated_files/mcc.h" 2
+
+
+
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 54 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/i2c1.h" 1
+# 55 "./mcc_generated_files/i2c1.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 140 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ptrdiff_t;
+# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 2 3
+# 55 "./mcc_generated_files/i2c1.h" 2
+# 86 "./mcc_generated_files/i2c1.h"
+typedef enum
+{
+    I2C1_MESSAGE_COMPLETE,
+    I2C1_MESSAGE_FAIL,
+    I2C1_MESSAGE_PENDING,
+    I2C1_STUCK_START,
+    I2C1_MESSAGE_ADDRESS_NO_ACK,
+    I2C1_DATA_NO_ACK,
+    I2C1_LOST_STATE
+} I2C1_MESSAGE_STATUS;
+# 111 "./mcc_generated_files/i2c1.h"
+typedef struct
+{
+    uint16_t address;
+
+
+    uint8_t length;
+    uint8_t *pbuffer;
+} I2C1_TRANSACTION_REQUEST_BLOCK;
+# 223 "./mcc_generated_files/i2c1.h"
+void I2C1_Initialize(void);
+# 262 "./mcc_generated_files/i2c1.h"
+void I2C1_MasterWrite(
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address,
+                                I2C1_MESSAGE_STATUS *pstatus);
+# 409 "./mcc_generated_files/i2c1.h"
+void I2C1_MasterRead(
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address,
+                                I2C1_MESSAGE_STATUS *pstatus);
+# 519 "./mcc_generated_files/i2c1.h"
+void I2C1_MasterTRBInsert(
+                                uint8_t count,
+                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb_list,
+                                I2C1_MESSAGE_STATUS *pflag);
+# 563 "./mcc_generated_files/i2c1.h"
+void I2C1_MasterReadTRBBuild(
+                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address);
+# 608 "./mcc_generated_files/i2c1.h"
+void I2C1_MasterWriteTRBBuild(
+                                I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address);
+# 650 "./mcc_generated_files/i2c1.h"
+_Bool I2C1_MasterQueueIsEmpty(void);
+# 688 "./mcc_generated_files/i2c1.h"
+_Bool I2C1_MasterQueueIsFull(void);
+
+void I2C1_BusCollisionISR( void );
+void I2C1_ISR ( void );
+# 55 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/adcc.h" 1
+# 72 "./mcc_generated_files/adcc.h"
+typedef uint16_t adc_result_t;
+
+typedef __uint24 uint24_t;
+# 89 "./mcc_generated_files/adcc.h"
+typedef enum
+{
+    channel_ANB7 = 0xF,
+    channel_Vss = 0x3B,
+    channel_Temp_Sensor = 0x3C,
+    channel_DAC1_Output = 0x3D,
+    channel_FVR_Buffer1 = 0x3E,
+    channel_FVR_Buffer2 = 0x3F
+} adcc_channel_t;
+# 131 "./mcc_generated_files/adcc.h"
+void ADCC_Initialize(void);
+# 160 "./mcc_generated_files/adcc.h"
+void ADCC_StartConversion(adcc_channel_t channel);
+# 190 "./mcc_generated_files/adcc.h"
+_Bool ADCC_IsConversionDone();
+# 222 "./mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetConversionResult(void);
+# 253 "./mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 278 "./mcc_generated_files/adcc.h"
+void ADCC_StopConversion(void);
+# 305 "./mcc_generated_files/adcc.h"
+void ADCC_SetStopOnInterrupt(void);
+# 330 "./mcc_generated_files/adcc.h"
+void ADCC_DischargeSampleCapacitor(void);
+# 356 "./mcc_generated_files/adcc.h"
+void ADCC_LoadAcquisitionRegister(uint16_t);
+# 382 "./mcc_generated_files/adcc.h"
+void ADCC_SetPrechargeTime(uint16_t);
+# 407 "./mcc_generated_files/adcc.h"
+void ADCC_SetRepeatCount(uint8_t);
+# 435 "./mcc_generated_files/adcc.h"
+uint8_t ADCC_GetCurrentCountofConversions(void);
+# 459 "./mcc_generated_files/adcc.h"
+void ADCC_ClearAccumulator(void);
+# 484 "./mcc_generated_files/adcc.h"
+uint24_t ADCC_GetAccumulatorValue(void);
+# 512 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasAccumulatorOverflowed(void);
+# 537 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetFilterValue(void);
+# 565 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetPreviousResult(void);
+# 591 "./mcc_generated_files/adcc.h"
+void ADCC_DefineSetPoint(uint16_t);
+# 617 "./mcc_generated_files/adcc.h"
+void ADCC_SetUpperThreshold(uint16_t);
+# 643 "./mcc_generated_files/adcc.h"
+void ADCC_SetLowerThreshold(uint16_t);
+# 670 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetErrorCalculation(void);
+# 697 "./mcc_generated_files/adcc.h"
+void ADCC_EnableDoubleSampling(void);
+# 721 "./mcc_generated_files/adcc.h"
+void ADCC_EnableContinuousConversion(void);
+# 745 "./mcc_generated_files/adcc.h"
+void ADCC_DisableContinuousConversion(void);
+# 773 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedUpperThreshold(void);
+# 801 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedLowerThreshold(void);
+# 828 "./mcc_generated_files/adcc.h"
+uint8_t ADCC_GetConversionStageStatus(void);
+# 845 "./mcc_generated_files/adcc.h"
+void ADCC_SetADTIInterruptHandler(void (* InterruptHandler)(void));
+# 861 "./mcc_generated_files/adcc.h"
+void ADCC_ThresholdISR(void);
+# 879 "./mcc_generated_files/adcc.h"
+void ADCC_DefaultInterruptHandler(void);
+# 56 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/eusart1.h" 1
+# 75 "./mcc_generated_files/eusart1.h"
+typedef union {
+    struct {
+        unsigned perr : 1;
+        unsigned ferr : 1;
+        unsigned oerr : 1;
+        unsigned reserved : 5;
+    };
+    uint8_t status;
+}eusart1_status_t;
+
+
+
+
+extern volatile uint8_t eusart1TxBufferRemaining;
+extern volatile uint8_t eusart1RxCount;
+
+
+
+
+
+void (*EUSART1_TxDefaultInterruptHandler)(void);
+void (*EUSART1_RxDefaultInterruptHandler)(void);
+# 118 "./mcc_generated_files/eusart1.h"
+void EUSART1_Initialize(void);
+# 171 "./mcc_generated_files/eusart1.h"
+uint8_t EUSART1_is_tx_ready(void);
+# 223 "./mcc_generated_files/eusart1.h"
+uint8_t EUSART1_is_rx_ready(void);
+# 270 "./mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_tx_done(void);
+# 318 "./mcc_generated_files/eusart1.h"
+eusart1_status_t EUSART1_get_last_status(void);
+# 338 "./mcc_generated_files/eusart1.h"
+uint8_t EUSART1_Read(void);
+# 358 "./mcc_generated_files/eusart1.h"
+void EUSART1_Write(uint8_t txData);
+# 379 "./mcc_generated_files/eusart1.h"
+void EUSART1_Transmit_ISR(void);
+# 400 "./mcc_generated_files/eusart1.h"
+void EUSART1_Receive_ISR(void);
+# 421 "./mcc_generated_files/eusart1.h"
+void EUSART1_RxDataHandler(void);
+# 439 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
+# 457 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
+# 475 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
+# 495 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
+# 515 "./mcc_generated_files/eusart1.h"
+void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
+# 57 "./mcc_generated_files/mcc.h" 2
+# 72 "./mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 85 "./mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 98 "./mcc_generated_files/mcc.h"
+void PMD_Initialize(void);
+# 34 "./tm1650.h" 2
+
+
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 3
@@ -18279,111 +18559,146 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 42 "./DMX_Source.h" 2
+# 37 "./tm1650.h" 2
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
-# 43 "./DMX_Source.h" 2
-
-
-
-
-
-
-void LED_init();
-void LED_setBrightness(unsigned int duty);
-void LED_setColor(uint8_t R, uint8_t G, uint8_t B, uint8_t W);
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 419 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\string.h" 2 3
 
 
-void UART_init();
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
 
-typedef uint16_t time_t;
-# 65 "./DMX_Source.h"
-uint8_t input[513];
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
 
-int point;
-# 9 "DMX_Source.c" 2
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 
 
-void UART_init(){
-    SP1BRG = 0x03;
-
-    TX1STAbits.BRGH = 1;
-    BAUD1CONbits.BRG16 = 1;
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 38 "./tm1650.h" 2
 
 
-    RX1PPS = 0b00001100;
 
-    TX1STAbits.SYNC = 0;
 
-    RC1STAbits.SPEN = 1;
 
-    RC1STAbits.RX9 = 0;
-    RC1STAbits.CREN = 1;
-    TX1STAbits.TXEN = 0;
 
-    TRISB4 = 1;
-    ANSELB = 0x00;
 
-    point = 0;
-    PIE3bits.RC1IE = 1;
-    (INTCONbits.GIE = 1);
-    (INTCONbits.PEIE = 1);
+
+void TM1650_init();
+static void writeData(uint8_t address, uint8_t data);
+void TM1650_setDigit(uint8_t digit, char num, _Bool dp);
+void putch(char dataToYeet);
+void TM1650_fastPrintNum(uint16_t num);
+void TM1650_enable(_Bool enable);
+_Bool TM1650_isEnabled();
+int count = 0;
+_Bool displayState;
+# 35 "./controller.h" 2
+
+
+uint16_t address = 1;
+
+void CONTROLLER_init();
+void address_inc();
+void address_dec();
+void CONTROLLER_task();
+time_t lastActiveTime;
+# 11 "controller.c" 2
+
+
+void CONTROLLER_init() {
+    TM1650_fastPrintNum(address);
 }
 
-void LED_init(){
-    CCP1CONbits.MODE = 0b1100;
-    CCP2CONbits.MODE = 0b1100;
-    CCP3CONbits.MODE = 0b1100;
-    CCP4CONbits.MODE = 0b1100;
 
-    CCP1CONbits.CCP1EN = 1;
-    CCP2CONbits.CCP2EN = 1;
-    CCP3CONbits.CCP3EN = 1;
-    CCP4CONbits.CCP4EN = 1;
-    T2CLKCON = 0x01;
 
-    TRISC7 = 0;
-    TRISC6 = 0;
-    TRISC3 = 0;
-    TRISC4 = 0;
 
-    RC7PPS = 0x09;
-    RC6PPS = 0x0A;
-    RC3PPS = 0x0B;
-    RC4PPS = 0x0C;
+void address_inc()
+{
+    if(address == 512)
+        address = 1;
+    else
+        address++;
 
-    CCPR1H = 0x00;
-    CCPR1L = 0x04;
-    CCPR2H = 0x00;
-    CCPR2L = 0x04;
-    CCPR3H = 0x00;
-    CCPR3L = 0x04;
-    CCPR4H = 0x00;
-    CCPR4L = 0x04;
-    T2CONbits.ON = 1;
+
+    TM1650_fastPrintNum(address);
 }
 
-void LED_setColor(uint8_t R, uint8_t G, uint8_t B, uint8_t W){
-    if(R < 256 && G < 256 && B < 256 && W < 256){
-    R = ((float)R/2048)*(4000000/(122 * 32));
-    G = ((float)G/2048)*(4000000/(122 * 32));
-    B = ((float)B/2048)*(4000000/(122 * 32));
-    W = ((float)W/2048)*(4000000/(122 * 32));
-    CCPR1H = R >> 8;
-    CCPR1L = R;
-    CCPR2H = G >> 8;
-    CCPR2L = G;
-    CCPR3H = B >> 8;
-    CCPR3L = B;
-    CCPR4H = W >> 8;
-    CCPR4L = W;
+
+
+
+void address_dec()
+{
+    if(address == 1)
+        address = 512;
+    else
+        address--;
+
+
+    TM1650_fastPrintNum(address);
+}
+
+void CONTROLLER_task() {
+    _Bool active = 1;
+    if (BUTTONS_isClicked(up)) {
+        address_inc();
+    }else if(BUTTONS_isHeld(up)){
+        address_inc();
+    }else if(BUTTONS_isClicked(down)) {
+        address_dec();
+    }else if(BUTTONS_isHeld(down)){
+        address_dec();
+    }else{
+        active = 0;
     }
-}
 
-void LED_setBrightness(unsigned int duty){
-    duty = ((float)duty/1024)*(4000000/(122 * 32));
-    CCPR1H = duty >> 8;
-    CCPR1L = duty;
+    if(active){
+        TM1650_enable(1);
+        lastActiveTime = CLOCK_getTime();
+    }
+    if(CLOCK_getTime() - lastActiveTime >= 5000){
+        TM1650_enable(0);
+        lastActiveTime = CLOCK_getTime() - 5001;
+    }
 }

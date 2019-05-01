@@ -43,6 +43,7 @@ void address_dec()
 }
 
 void CONTROLLER_task() {
+    bool active = true;
     if (BUTTONS_isClicked(up)) {
         address_inc();
     }else if(BUTTONS_isHeld(up)){
@@ -51,5 +52,16 @@ void CONTROLLER_task() {
         address_dec();
     }else if(BUTTONS_isHeld(down)){
         address_dec();
+    }else{
+        active = false;
+    }
+    
+    if(active){
+        TM1650_enable(true);
+        lastActiveTime = CLOCK_getTime();
+    }
+    if(CLOCK_getTime() - lastActiveTime >= 5000){
+        TM1650_enable(false);
+        lastActiveTime = CLOCK_getTime() - 5001;
     }
 }

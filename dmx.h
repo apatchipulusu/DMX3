@@ -41,10 +41,11 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include "clock.h"
 
 //#pragma config WDTE = OFF
 
-
+#define DMX_BUTTON_SCAN_INTERVAL 100
 
 void LED_init();
 void LED_setBrightness(unsigned int duty);
@@ -52,9 +53,16 @@ void LED_setColor(uint8_t R, uint8_t G, uint8_t B, uint8_t W);
 //void ADC_init();
 //uint16_t ADC_getValue();
 void UART_init();
+void DMX_init();
+void handler();
+void DMX_Task();
+bool DMX_Mode();
+extern time_t dmx_lastActiveTime;
+void animation1();
 
 typedef uint16_t time_t;
-
+extern uint8_t input[513];
+int color = 0;
 //void CLOCK_init();
 //time_t CLOCK_getTime();
 
@@ -62,8 +70,5 @@ typedef uint16_t time_t;
 
 //void CLOCK_timerCallback();
 
-uint8_t input[513]; 
-
-int point;
 
 #endif

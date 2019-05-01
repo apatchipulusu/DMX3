@@ -1417,13 +1417,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32039
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 32039: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"40 ./clock.h
-[; ;./clock.h: 40: time_t ClockCurrentTime = 0;
+"13 clock.c
+[; ;clock.c: 13: time_t ClockCurrentTime = 0;
 [v _ClockCurrentTime `us ~T0 @X0 1 e ]
 [i _ClockCurrentTime
 -> -> 0 `i `us
 ]
-"18 clock.c
+"18
 [; ;clock.c: 18: void CLOCK_init()
 [v _CLOCK_init `(v ~T0 @X0 1 ef ]
 "19
@@ -1431,46 +1431,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _CLOCK_init ]
 [f ]
-"24
-[; ;clock.c: 24:     T0CON1bits.T0CS = 0b010;
-[e = . . _T0CON1bits 2 2 -> -> 2 `i `uc ]
 "25
-[; ;clock.c: 25:     T0CON1bits.CKPS = 0b0010;
-[e = . . _T0CON1bits 0 0 -> -> 2 `i `uc ]
-"27
-[; ;clock.c: 27:     TMR0H = 249;
+[; ;clock.c: 25:     T0CON1bits.T0CS = 0b010;
+[e = . . _T0CON1bits 2 2 -> -> 2 `i `uc ]
+"26
+[; ;clock.c: 26:     T0CON1bits.CKPS = 0b0110;
+[e = . . _T0CON1bits 0 0 -> -> 6 `i `uc ]
+"28
+[; ;clock.c: 28:     TMR0H = 249;
 [e = _TMR0H -> -> 249 `i `uc ]
-"29
-[; ;clock.c: 29:     PIE0bits.TMR0IE = 1;
+"30
+[; ;clock.c: 30:     PIE0bits.TMR0IE = 1;
 [e = . . _PIE0bits 0 3 -> -> 1 `i `uc ]
-"32
-[; ;clock.c: 32:     T0CON0bits.EN = 1;
-[e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
 "33
-[; ;clock.c: 33: }
+[; ;clock.c: 33:     T0CON0bits.EN = 1;
+[e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
+"34
+[; ;clock.c: 34: }
 [e :UE 1513 ]
 }
-"35
-[; ;clock.c: 35: time_t CLOCK_getTime() {
+"36
+[; ;clock.c: 36: time_t CLOCK_getTime() {
 [v _CLOCK_getTime `(us ~T0 @X0 1 ef ]
 {
 [e :U _CLOCK_getTime ]
 [f ]
-"36
-[; ;clock.c: 36:     return ClockCurrentTime;
+"37
+[; ;clock.c: 37:     return ClockCurrentTime;
 [e ) _ClockCurrentTime ]
 [e $UE 1514  ]
-"37
-[; ;clock.c: 37: }
+"38
+[; ;clock.c: 38: }
 [e :UE 1514 ]
 }
-"39
-[; ;clock.c: 39: static void CLOCK_timerCallback() {
+"40
+[; ;clock.c: 40: static void CLOCK_timerCallback() {
 [v _CLOCK_timerCallback `(v ~T0 @X0 1 sf ]
 {
 [e :U _CLOCK_timerCallback ]
 [f ]
-"41
-[; ;clock.c: 41: }
+"42
+[; ;clock.c: 42: }
 [e :UE 1515 ]
 }

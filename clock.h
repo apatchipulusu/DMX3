@@ -37,5 +37,5 @@ typedef uint16_t time_t;
 
 void CLOCK_init();
 time_t CLOCK_getTime();
-time_t ClockCurrentTime = 0;
+extern time_t ClockCurrentTime;
 #endif	/* CLOCK_H */

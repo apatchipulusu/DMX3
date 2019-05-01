@@ -1,9 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F10923 `(v ~T0 @X0 0 tf ]
-[v F10925 `(v ~T0 @X0 0 tf ]
-"71 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+[v F10974 `(v ~T0 @X0 0 tf ]
+[v F10976 `(v ~T0 @X0 0 tf ]
 "419 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 419:     struct {
 [s S31 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -15,9 +12,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "426
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"47 ./tm1650.h
-[; ;./tm1650.h: 47: static void writeData(uint8_t address, uint8_t data);
-[v _writeData `(v ~T0 @X0 0 sf2`uc`uc ]
+"51 ./tm1650.h
+[; ;./tm1650.h: 51: void TM1650_enable(_Bool enable);
+[v _TM1650_enable `(v ~T0 @X0 0 ef1`a ]
 "20 tm1650.c
 [; ;tm1650.c: 20:     I2C1_MESSAGE_STATUS status = I2C1_MESSAGE_PENDING;
 [c E10868 0 1 2 3 4 5 6 .. ]
@@ -1389,16 +1386,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSH equ 01FEFh ;# ">
 "95 ./mcc_generated_files/eusart1.h
 [; ;./mcc_generated_files/eusart1.h: 95: void (*EUSART1_TxDefaultInterruptHandler)(void);
-[v _EUSART1_TxDefaultInterruptHandler `*F10923 ~T0 @X0 1 e ]
+[v _EUSART1_TxDefaultInterruptHandler `*F10974 ~T0 @X0 1 e ]
 "96
 [; ;./mcc_generated_files/eusart1.h: 96: void (*EUSART1_RxDefaultInterruptHandler)(void);
-[v _EUSART1_RxDefaultInterruptHandler `*F10925 ~T0 @X0 1 e ]
-"51 ./tm1650.h
-[; ;./tm1650.h: 51: int count = 0;
+[v _EUSART1_RxDefaultInterruptHandler `*F10976 ~T0 @X0 1 e ]
+"53 ./tm1650.h
+[; ;./tm1650.h: 53: int count = 0;
 [v _count `i ~T0 @X0 1 e ]
 [i _count
 -> 0 `i
 ]
+"54
+[; ;./tm1650.h: 54: _Bool displayState;
+[v _displayState `a ~T0 @X0 1 e ]
 "12 tm1650.c
 [; ;tm1650.c: 12: void TM1650_init(){
 [v _TM1650_init `(v ~T0 @X0 1 ef ]
@@ -1406,17 +1406,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _TM1650_init ]
 [f ]
 "13
-[; ;tm1650.c: 13:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"14
-[; ;tm1650.c: 14:     (INTCONbits.GIE = 1);
+[; ;tm1650.c: 13:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"15
-[; ;tm1650.c: 15:     (INTCONbits.PEIE = 1);
+"14
+[; ;tm1650.c: 14:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
 "16
-[; ;tm1650.c: 16:     writeData(0x24, 0x01);
-[e ( _writeData (2 , -> -> 36 `i `uc -> -> 1 `i `uc ]
+[; ;tm1650.c: 16:     TM1650_enable(1);
+[e ( _TM1650_enable (1 -> -> 1 `i `a ]
 "17
 [; ;tm1650.c: 17: }
 [e :UE 1519 ]
@@ -1462,8 +1459,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "27
 [; ;tm1650.c: 27:     const uint8_t charTable[] =
-[v F11468 `Cuc ~T0 @X0 -> 96 `i s charTable ]
-[i F11468
+[v F11523 `Cuc ~T0 @X0 -> 96 `i s charTable ]
+[i F11523
 :U ..
 -> -> 0 `i `uc
 -> -> 130 `i `uc
@@ -1566,7 +1563,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36
 [; ;tm1650.c: 36:     uint8_t data = charTable[num-32];
 [v _data `uc ~T0 @X0 1 a ]
-[e = _data *U + &U F11468 * -> -> - -> _num `i -> 32 `i `ui `ux -> -> # *U &U F11468 `ui `ux ]
+[e = _data *U + &U F11523 * -> -> - -> _num `i -> 32 `i `ui `ux -> -> # *U &U F11523 `ui `ux ]
 "37
 [; ;tm1650.c: 37:     if(dp == 1){
 [e $ ! == -> _dp `i -> 1 `i 1525  ]
@@ -1830,4 +1827,57 @@ Version 4.0 HI-TECH Software Intermediate Code
 "110
 [; ;tm1650.c: 110: }
 [e :UE 1537 ]
+}
+"112
+[; ;tm1650.c: 112: void TM1650_enable(_Bool enable){
+[v _TM1650_enable `(v ~T0 @X0 1 ef1`a ]
+{
+[e :U _TM1650_enable ]
+[v _enable `a ~T0 @X0 1 r1 ]
+[f ]
+"113
+[; ;tm1650.c: 113:     if(enable == 1){
+[e $ ! == -> _enable `i -> 1 `i 1547  ]
+{
+"114
+[; ;tm1650.c: 114:         writeData(0x24, 0x01);
+[e ( _writeData (2 , -> -> 36 `i `uc -> -> 1 `i `uc ]
+"115
+[; ;tm1650.c: 115:         displayState = 1;
+[e = _displayState -> -> 1 `i `a ]
+"116
+[; ;tm1650.c: 116:     }else if(enable == 0){
+}
+[e $U 1548  ]
+[e :U 1547 ]
+[e $ ! == -> _enable `i -> 0 `i 1549  ]
+{
+"117
+[; ;tm1650.c: 117:         writeData(0x24, 0x00);
+[e ( _writeData (2 , -> -> 36 `i `uc -> -> 0 `i `uc ]
+"118
+[; ;tm1650.c: 118:         displayState = 0;
+[e = _displayState -> -> 0 `i `a ]
+"119
+[; ;tm1650.c: 119:     }
+}
+[e :U 1549 ]
+[e :U 1548 ]
+"120
+[; ;tm1650.c: 120: }
+[e :UE 1546 ]
+}
+"122
+[; ;tm1650.c: 122: _Bool TM1650_isEnabled(){
+[v _TM1650_isEnabled `(a ~T0 @X0 1 ef ]
+{
+[e :U _TM1650_isEnabled ]
+[f ]
+"123
+[; ;tm1650.c: 123:     return displayState;
+[e ) _displayState ]
+[e $UE 1550  ]
+"124
+[; ;tm1650.c: 124: }
+[e :UE 1550 ]
 }

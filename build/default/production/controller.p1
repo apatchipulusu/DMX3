@@ -9,8 +9,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./buttons.h: 52: typedef struct {
 [s S1513 `*Vuc 1 `uc 1 `E10874 1 `E10874 1 `E10869 1 `us 1 ]
 [n S1513 . port pin state lastState event time ]
-[v F10959 `(v ~T0 @X0 0 tf ]
-[v F10961 `(v ~T0 @X0 0 tf ]
+[v F11010 `(v ~T0 @X0 0 tf ]
+[v F11012 `(v ~T0 @X0 0 tf ]
 "50 ./tm1650.h
 [; ;./tm1650.h: 50: void TM1650_fastPrintNum(uint16_t num);
 [v _TM1650_fastPrintNum `(v ~T0 @X0 0 ef1`us ]
@@ -20,6 +20,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "70
 [; ;./buttons.h: 70: _Bool BUTTONS_isHeld(button_t* button);
 [v _BUTTONS_isHeld `(a ~T0 @X0 0 ef1`*S1513 ]
+"51 ./tm1650.h
+[; ;./tm1650.h: 51: void TM1650_enable(_Bool enable);
+[v _TM1650_enable `(v ~T0 @X0 0 ef1`a ]
+"39 ./clock.h
+[; ;./clock.h: 39: time_t CLOCK_getTime();
+[v _CLOCK_getTime `(us ~T0 @X0 0 e? ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1382,12 +1388,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32039
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 32039: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"40 ./clock.h
-[; ;./clock.h: 40: time_t ClockCurrentTime = 0;
-[v _ClockCurrentTime `us ~T0 @X0 1 e ]
-[i _ClockCurrentTime
--> -> 0 `i `us
-]
 "62 ./buttons.h
 [; ;./buttons.h: 62: button_t buttons[4];
 [v _buttons `S1513 ~T0 @X0 -> 4 `i e ]
@@ -1399,22 +1399,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _menu `*S1513 ~T0 @X0 1 e ]
 "95 ./mcc_generated_files/eusart1.h
 [; ;./mcc_generated_files/eusart1.h: 95: void (*EUSART1_TxDefaultInterruptHandler)(void);
-[v _EUSART1_TxDefaultInterruptHandler `*F10959 ~T0 @X0 1 e ]
+[v _EUSART1_TxDefaultInterruptHandler `*F11010 ~T0 @X0 1 e ]
 "96
 [; ;./mcc_generated_files/eusart1.h: 96: void (*EUSART1_RxDefaultInterruptHandler)(void);
-[v _EUSART1_RxDefaultInterruptHandler `*F10961 ~T0 @X0 1 e ]
-"51 ./tm1650.h
-[; ;./tm1650.h: 51: int count = 0;
+[v _EUSART1_RxDefaultInterruptHandler `*F11012 ~T0 @X0 1 e ]
+"53 ./tm1650.h
+[; ;./tm1650.h: 53: int count = 0;
 [v _count `i ~T0 @X0 1 e ]
 [i _count
 -> 0 `i
 ]
+"54
+[; ;./tm1650.h: 54: _Bool displayState;
+[v _displayState `a ~T0 @X0 1 e ]
 "37 ./controller.h
 [; ;./controller.h: 37: uint16_t address = 1;
 [v _address `us ~T0 @X0 1 e ]
 [i _address
 -> -> 1 `i `us
 ]
+"43
+[; ;./controller.h: 43: time_t lastActiveTime;
+[v _lastActiveTime `us ~T0 @X0 1 e ]
 "13 controller.c
 [; ;controller.c: 13: void CONTROLLER_init() {
 [v _CONTROLLER_init `(v ~T0 @X0 1 ef ]
@@ -1493,50 +1499,91 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _CONTROLLER_task ]
 [f ]
 "46
-[; ;controller.c: 46:     if (BUTTONS_isClicked(up)) {
+[; ;controller.c: 46:     _Bool active = 1;
+[v _active `a ~T0 @X0 1 a ]
+[e = _active -> -> 1 `i `a ]
+"47
+[; ;controller.c: 47:     if (BUTTONS_isClicked(up)) {
 [e $ ! != -> ( _BUTTONS_isClicked (1 _up `i -> 0 `i 1528  ]
 {
-"47
-[; ;controller.c: 47:         address_inc();
-[e ( _address_inc ..  ]
 "48
-[; ;controller.c: 48:     }else if(BUTTONS_isHeld(up)){
+[; ;controller.c: 48:         address_inc();
+[e ( _address_inc ..  ]
+"49
+[; ;controller.c: 49:     }else if(BUTTONS_isHeld(up)){
 }
 [e $U 1529  ]
 [e :U 1528 ]
 [e $ ! != -> ( _BUTTONS_isHeld (1 _up `i -> 0 `i 1530  ]
 {
-"49
-[; ;controller.c: 49:         address_inc();
-[e ( _address_inc ..  ]
 "50
-[; ;controller.c: 50:     }else if(BUTTONS_isClicked(down)) {
+[; ;controller.c: 50:         address_inc();
+[e ( _address_inc ..  ]
+"51
+[; ;controller.c: 51:     }else if(BUTTONS_isClicked(down)) {
 }
 [e $U 1531  ]
 [e :U 1530 ]
 [e $ ! != -> ( _BUTTONS_isClicked (1 _down `i -> 0 `i 1532  ]
 {
-"51
-[; ;controller.c: 51:         address_dec();
-[e ( _address_dec ..  ]
 "52
-[; ;controller.c: 52:     }else if(BUTTONS_isHeld(down)){
+[; ;controller.c: 52:         address_dec();
+[e ( _address_dec ..  ]
+"53
+[; ;controller.c: 53:     }else if(BUTTONS_isHeld(down)){
 }
 [e $U 1533  ]
 [e :U 1532 ]
 [e $ ! != -> ( _BUTTONS_isHeld (1 _down `i -> 0 `i 1534  ]
 {
-"53
-[; ;controller.c: 53:         address_dec();
-[e ( _address_dec ..  ]
 "54
-[; ;controller.c: 54:     }
+[; ;controller.c: 54:         address_dec();
+[e ( _address_dec ..  ]
+"55
+[; ;controller.c: 55:     }else{
 }
+[e $U 1535  ]
 [e :U 1534 ]
+{
+"56
+[; ;controller.c: 56:         active = 0;
+[e = _active -> -> 0 `i `a ]
+"57
+[; ;controller.c: 57:     }
+}
+[e :U 1535 ]
 [e :U 1533 ]
 [e :U 1531 ]
 [e :U 1529 ]
-"55
-[; ;controller.c: 55: }
+"59
+[; ;controller.c: 59:     if(active){
+[e $ ! != -> _active `i -> 0 `i 1536  ]
+{
+"60
+[; ;controller.c: 60:         TM1650_enable(1);
+[e ( _TM1650_enable (1 -> -> 1 `i `a ]
+"61
+[; ;controller.c: 61:         lastActiveTime = CLOCK_getTime();
+[e = _lastActiveTime ( _CLOCK_getTime ..  ]
+"62
+[; ;controller.c: 62:     }
+}
+[e :U 1536 ]
+"63
+[; ;controller.c: 63:     if(CLOCK_getTime() - lastActiveTime >= 5000){
+[e $ ! >= - -> ( _CLOCK_getTime ..  `ui -> _lastActiveTime `ui -> -> 5000 `i `ui 1537  ]
+{
+"64
+[; ;controller.c: 64:         TM1650_enable(0);
+[e ( _TM1650_enable (1 -> -> 0 `i `a ]
+"65
+[; ;controller.c: 65:         lastActiveTime = CLOCK_getTime() - 5001;
+[e = _lastActiveTime -> - -> ( _CLOCK_getTime ..  `ui -> -> 5001 `i `ui `us ]
+"66
+[; ;controller.c: 66:     }
+}
+[e :U 1537 ]
+"67
+[; ;controller.c: 67: }
 [e :UE 1527 ]
 }

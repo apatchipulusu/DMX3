@@ -32,7 +32,7 @@
 #define	BUTTONS_H
 #define BUTTON_SCAN_INTERVAL 10
 #define BUTTON_COUNT 4
-#define HOLD_TIME 500
+#define HOLD_TIME 250
 #include <stdint.h>
 #include <stdbool.h>
 #include "clock.h"
@@ -70,4 +70,4 @@ bool BUTTONS_isClicked(button_t* button);
 bool BUTTONS_isHeld(button_t* button); 
 //typedef uint16_t time_t;
 
-#endif	/* CLOCK_H */
+#endif

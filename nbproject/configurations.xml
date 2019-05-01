@@ -13,12 +13,14 @@
         <itemPath>mcc_generated_files/device_config.h</itemPath>
         <itemPath>mcc_generated_files/i2c1.h</itemPath>
         <itemPath>mcc_generated_files/mcc.h</itemPath>
+        <itemPath>mcc_generated_files/adcc.h</itemPath>
       </logicalFolder>
       <itemPath>tm1650.h</itemPath>
-      <itemPath>DMX_Source.h</itemPath>
       <itemPath>clock.h</itemPath>
       <itemPath>buttons.h</itemPath>
       <itemPath>controller.h</itemPath>
+      <itemPath>beat.h</itemPath>
+      <itemPath>dmx.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -36,13 +38,15 @@
         <itemPath>mcc_generated_files/mcc.c</itemPath>
         <itemPath>mcc_generated_files/i2c1.c</itemPath>
         <itemPath>mcc_generated_files/pin_manager.c</itemPath>
+        <itemPath>mcc_generated_files/adcc.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>tm1650.c</itemPath>
-      <itemPath>DMX_Source.c</itemPath>
       <itemPath>clock.c</itemPath>
       <itemPath>buttons.c</itemPath>
       <itemPath>controller.c</itemPath>
+      <itemPath>beat.c</itemPath>
+      <itemPath>dmx.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -188,14 +192,14 @@
       </XC8-config-global>
       <snap>
         <property key="AutoSelectMemRanges" value="auto"/>
-        <property key="Freeze Peripherals" value="true"/>
+        <property key="Freeze Peripherals" value="false"/>
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="communication.interface"
                   value="${communication.interface.default}"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
-        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="debugoptions.useswbreakpoints" value="true"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>

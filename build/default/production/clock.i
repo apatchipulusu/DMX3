@@ -18149,11 +18149,11 @@ typedef uint16_t time_t;
 
 void CLOCK_init();
 time_t CLOCK_getTime();
-time_t ClockCurrentTime = 0;
+extern time_t ClockCurrentTime;
 # 11 "clock.c" 2
 
 
-
+time_t ClockCurrentTime = 0;
 
 
 static void CLOCK_timerCallback();
@@ -18164,8 +18164,9 @@ void CLOCK_init()
 
 
 
+
     T0CON1bits.T0CS = 0b010;
-    T0CON1bits.CKPS = 0b0010;
+    T0CON1bits.CKPS = 0b0110;
 
     TMR0H = 249;
 

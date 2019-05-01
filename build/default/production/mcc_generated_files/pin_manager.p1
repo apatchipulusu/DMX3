@@ -59,9 +59,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "29751
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 29751: extern volatile unsigned char RA4PPS __attribute__((address(0x1F14)));
 [v _RA4PPS `Vuc ~T0 @X0 0 e@7956 ]
-"30041
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30041: extern volatile unsigned char RB7PPS __attribute__((address(0x1F1F)));
-[v _RB7PPS `Vuc ~T0 @X0 0 e@7967 ]
+"29983
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 29983: extern volatile unsigned char RB6PPS __attribute__((address(0x1F1E)));
+[v _RB6PPS `Vuc ~T0 @X0 0 e@7966 ]
 "29809
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 29809: extern volatile unsigned char RA5PPS __attribute__((address(0x1F15)));
 [v _RA5PPS `Vuc ~T0 @X0 0 e@7957 ]
@@ -1454,8 +1454,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 67:     TRISA = 0x3F;
 [e = _TRISA -> -> 63 `i `uc ]
 "68
-[; ;mcc_generated_files/pin_manager.c: 68:     TRISB = 0x70;
-[e = _TRISB -> -> 112 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 68:     TRISB = 0xB0;
+[e = _TRISB -> -> 176 `i `uc ]
 "69
 [; ;mcc_generated_files/pin_manager.c: 69:     TRISC = 0xFF;
 [e = _TRISC -> -> 255 `i `uc ]
@@ -1502,8 +1502,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 107:     RA4PPS = 0x14;
 [e = _RA4PPS -> -> 20 `i `uc ]
 "108
-[; ;mcc_generated_files/pin_manager.c: 108:     RB7PPS = 0x0F;
-[e = _RB7PPS -> -> 15 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 108:     RB6PPS = 0x0F;
+[e = _RB6PPS -> -> 15 `i `uc ]
 "109
 [; ;mcc_generated_files/pin_manager.c: 109:     RA5PPS = 0x13;
 [e = _RA5PPS -> -> 19 `i `uc ]

@@ -48,26 +48,12 @@
 
 #include "interrupt_manager.h"
 #include "mcc.h"
-#include "../DMX_Source.h"
+#include "../dmx.h"
 #include "../clock.h"
 
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
     // interrupt handler
-    if(RC1STAbits.OERR == 1){
-                RC1STAbits.CREN = 0;
-                RC1STAbits.CREN = 1;
-            }
-            uint8_t dataIn = RC1REG;
-            if(RC1STAbits.FERR == 1){
-                point = 0;
-            }else if(point > 513){
-                //OOF
-            }else{
-                input[point] = dataIn;
-                point++;
-            }
-    
     if(INTCONbits.PEIE == 1)
     {
         if(PIE3bits.BCL1IE == 1 && PIR3bits.BCL1IF == 1)
@@ -77,22 +63,27 @@ void __interrupt() INTERRUPT_InterruptManager (void)
         else if(PIE3bits.SSP1IE == 1 && PIR3bits.SSP1IF == 1)
         {
             I2C1_ISR();
-        }else if(PIR0bits.TMR0IF == 1){
+        } 
+        else if(PIE3bits.TX1IE == 1 && PIR3bits.TX1IF == 1)
+        {
+            EUSART1_TxDefaultInterruptHandler();
+        } 
+        else if(PIE3bits.RC1IE == 1 && PIR3bits.RC1IF == 1)
+        {
+            EUSART1_RxDefaultInterruptHandler();
+            dmx_lastActiveTime = CLOCK_getTime();
+        } 
+        else if(PIR0bits.TMR0IF == 1){
         //CLOCK_timerCallback();
             ClockCurrentTime++;
             PIR0bits.TMR0IF = 0;
+        }else if(PIE1bits.ADTIE == 1 && PIR1bits.ADTIF == 1)
+        {
+            ADCC_ThresholdISR();
         } 
-//        else if(PIE3bits.TX1IE == 1 && PIR3bits.TX1IF == 1)
-//        {
-//            EUSART1_TxDefaultInterruptHandler();
-//        } 
-//        else if(PIE3bits.RC1IE == 1 && PIR3bits.RC1IF == 1)
-//        {
-//            EUSART1_RxDefaultInterruptHandler();
-//        } 
         else
         {
-            
+           //Unhandled Interrupt
         }
     }      
     else

@@ -1,16 +1,75 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F10923 `(v ~T0 @X0 0 tf ]
-[v F10925 `(v ~T0 @X0 0 tf ]
+[v F10974 `(v ~T0 @X0 0 tf ]
+[v F10976 `(v ~T0 @X0 0 tf ]
+"62 ./buttons.h
+[; ;./buttons.h: 62: button_t buttons[4];
+[c E11535 0 1 .. ]
+[n E11535 . STATE_UNPRESSED STATE_PRESSED  ]
+[c E11530 0 1 2 .. ]
+[n E11530 . EVENT_IDLE EVENT_PRESSED EVENT_HELD  ]
+"52
+[; ;./buttons.h: 52: typedef struct {
+[s S1519 `*Vuc 1 `uc 1 `E11535 1 `E11535 1 `E11530 1 `us 1 ]
+[n S1519 . port pin state lastState event time ]
 [p mainexit ]
+"72 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+[v F10824 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic.h
+[v __delay `JF10824 ~T0 @X0 0 e ]
+[p i __delay ]
 "46 ./tm1650.h
 [; ;./tm1650.h: 46: void TM1650_init();
 [v _TM1650_init `(v ~T0 @X0 0 e? ]
-"54 ./DMX_Source.h
-[; ;./DMX_Source.h: 54: void UART_init();
-[v _UART_init `(v ~T0 @X0 0 e? ]
+"38 ./clock.h
+[; ;./clock.h: 38: void CLOCK_init();
+[v _CLOCK_init `(v ~T0 @X0 0 e? ]
+"67 ./buttons.h
+[; ;./buttons.h: 67: void BUTTONS_init();
+[v _BUTTONS_init `(v ~T0 @X0 0 e? ]
+"39 ./controller.h
+[; ;./controller.h: 39: void CONTROLLER_init();
+[v _CONTROLLER_init `(v ~T0 @X0 0 e? ]
+"55 ./dmx.h
+[; ;./dmx.h: 55: void DMX_init();
+[v _DMX_init `(v ~T0 @X0 0 e? ]
+"49
+[; ;./dmx.h: 49: void LED_init();
+[v _LED_init `(v ~T0 @X0 0 e? ]
+"17 ./beat.h
+[; ;./beat.h: 17: void BEAT_init();
+[v _BEAT_init `(v ~T0 @X0 0 e? ]
+"39013 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 39013: extern volatile __bit TRISC5 __attribute__((address(0xA5)));
+[v _TRISC5 `Vb ~T0 @X0 0 e@165 ]
+"34816
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 34816: extern volatile __bit LATC5 __attribute__((address(0xD5)));
+[v _LATC5 `Vb ~T0 @X0 0 e@213 ]
+"66 ./buttons.h
+[; ;./buttons.h: 66: void BUTTONS_task();
+[v _BUTTONS_task `(v ~T0 @X0 0 e? ]
+"42 ./controller.h
+[; ;./controller.h: 42: void CONTROLLER_task();
+[v _CONTROLLER_task `(v ~T0 @X0 0 e? ]
+"16 ./beat.h
+[; ;./beat.h: 16: void BEAT_task();
+[v _BEAT_task `(v ~T0 @X0 0 e? ]
 "50 ./tm1650.h
 [; ;./tm1650.h: 50: void TM1650_fastPrintNum(uint16_t num);
 [v _TM1650_fastPrintNum `(v ~T0 @X0 0 ef1`us ]
+"51 ./dmx.h
+[; ;./dmx.h: 51: void LED_setColor(uint8_t R, uint8_t G, uint8_t B, uint8_t W);
+[v _LED_setColor `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
+"59
+[; ;./dmx.h: 59: extern uint8_t input[513];
+[v _input `uc ~T0 @X0 -> 0 `x e ]
+"39 ./clock.h
+[; ;./clock.h: 39: time_t CLOCK_getTime();
+[v _CLOCK_getTime `(us ~T0 @X0 0 e? ]
+"18 ./beat.h
+[; ;./beat.h: 18: _Bool BEAT_detected();
+[v _BEAT_detected `(a ~T0 @X0 0 e? ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1375,53 +1434,139 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSH equ 01FEFh ;# ">
 "95 ./mcc_generated_files/eusart1.h
 [; ;./mcc_generated_files/eusart1.h: 95: void (*EUSART1_TxDefaultInterruptHandler)(void);
-[v _EUSART1_TxDefaultInterruptHandler `*F10923 ~T0 @X0 1 e ]
+[v _EUSART1_TxDefaultInterruptHandler `*F10974 ~T0 @X0 1 e ]
 "96
 [; ;./mcc_generated_files/eusart1.h: 96: void (*EUSART1_RxDefaultInterruptHandler)(void);
-[v _EUSART1_RxDefaultInterruptHandler `*F10925 ~T0 @X0 1 e ]
-"51 ./tm1650.h
-[; ;./tm1650.h: 51: int count = 0;
+[v _EUSART1_RxDefaultInterruptHandler `*F10976 ~T0 @X0 1 e ]
+"53 ./tm1650.h
+[; ;./tm1650.h: 53: int count = 0;
 [v _count `i ~T0 @X0 1 e ]
 [i _count
 -> 0 `i
 ]
-"65 ./DMX_Source.h
-[; ;./DMX_Source.h: 65: uint8_t input[513];
-[v _input `uc ~T0 @X0 -> 513 `i e ]
-"67
-[; ;./DMX_Source.h: 67: int point;
-[v _point `i ~T0 @X0 1 e ]
+"54
+[; ;./tm1650.h: 54: _Bool displayState;
+[v _displayState `a ~T0 @X0 1 e ]
+"62 ./buttons.h
+[; ;./buttons.h: 62: button_t buttons[4];
+[v _buttons `S1519 ~T0 @X0 -> 4 `i e ]
+"64
+[; ;./buttons.h: 64: button_t *up, *down, *enter, *menu;
+[v _up `*S1519 ~T0 @X0 1 e ]
+[v _down `*S1519 ~T0 @X0 1 e ]
+[v _enter `*S1519 ~T0 @X0 1 e ]
+[v _menu `*S1519 ~T0 @X0 1 e ]
+"37 ./controller.h
+[; ;./controller.h: 37: uint16_t address = 1;
+[v _address `us ~T0 @X0 1 e ]
+[i _address
+-> -> 1 `i `us
+]
+"43
+[; ;./controller.h: 43: time_t lastActiveTime;
+[v _lastActiveTime `us ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"50 main.c
-[; ;main.c: 50: void main(void)
+"55 main.c
+[; ;main.c: 55: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"51
-[; ;main.c: 51: {
+"56
+[; ;main.c: 56: {
 {
 [e :U _main ]
 [f ]
-"52
-[; ;main.c: 52:     TM1650_init();
-[e ( _TM1650_init ..  ]
-"53
-[; ;main.c: 53:     UART_init();
-[e ( _UART_init ..  ]
-"56
-[; ;main.c: 56:     while (1)
-[e :U 1521 ]
 "57
-[; ;main.c: 57:     {
-{
+[; ;main.c: 57:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"58
+[; ;main.c: 58:     _delay((unsigned long)((50)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "59
-[; ;main.c: 59:         TM1650_fastPrintNum(input[8]);
-[e ( _TM1650_fastPrintNum (1 -> *U + &U _input * -> -> -> 8 `i `ui `ux -> -> # *U &U _input `ui `ux `us ]
+[; ;main.c: 59:     TM1650_init();
+[e ( _TM1650_init ..  ]
 "60
-[; ;main.c: 60:     }
-}
-[e :U 1520 ]
-[e $U 1521  ]
-[e :U 1522 ]
+[; ;main.c: 60:     CLOCK_init();
+[e ( _CLOCK_init ..  ]
 "61
-[; ;main.c: 61: }
-[e :UE 1519 ]
+[; ;main.c: 61:     BUTTONS_init();
+[e ( _BUTTONS_init ..  ]
+"62
+[; ;main.c: 62:     CONTROLLER_init();
+[e ( _CONTROLLER_init ..  ]
+"63
+[; ;main.c: 63:     DMX_init();
+[e ( _DMX_init ..  ]
+"65
+[; ;main.c: 65:     LED_init();
+[e ( _LED_init ..  ]
+"66
+[; ;main.c: 66:     BEAT_init();
+[e ( _BEAT_init ..  ]
+"67
+[; ;main.c: 67:     TRISC5 = 0;
+[e = _TRISC5 -> -> 0 `i `b ]
+"68
+[; ;main.c: 68:     LATC5 = 0;
+[e = _LATC5 -> -> 0 `i `b ]
+"70
+[; ;main.c: 70:     time_t lastTime = 0;
+[v _lastTime `us ~T0 @X0 1 a ]
+[e = _lastTime -> -> 0 `i `us ]
+"72
+[; ;main.c: 72:     while (1)
+[e :U 1522 ]
+"73
+[; ;main.c: 73:     {
+{
+"74
+[; ;main.c: 74:         BUTTONS_task();
+[e ( _BUTTONS_task ..  ]
+"75
+[; ;main.c: 75:         CONTROLLER_task();
+[e ( _CONTROLLER_task ..  ]
+"76
+[; ;main.c: 76:         BEAT_task();
+[e ( _BEAT_task ..  ]
+"77
+[; ;main.c: 77:         TM1650_fastPrintNum(address);
+[e ( _TM1650_fastPrintNum (1 _address ]
+"78
+[; ;main.c: 78:         LED_setColor(input[address],input[address+1],input[address+2],input[address+3]);
+[e ( _LED_setColor (4 , , , *U + &U _input * -> _address `ux -> -> # *U &U _input `ui `ux *U + &U _input * -> + -> _address `ui -> -> 1 `i `ui `ux -> -> # *U &U _input `ui `ux *U + &U _input * -> + -> _address `ui -> -> 2 `i `ui `ux -> -> # *U &U _input `ui `ux *U + &U _input * -> + -> _address `ui -> -> 3 `i `ui `ux -> -> # *U &U _input `ui `ux ]
+"83
+[; ;main.c: 83:         time_t time = CLOCK_getTime();
+[v _time `us ~T0 @X0 1 a ]
+[e = _time ( _CLOCK_getTime ..  ]
+"86
+[; ;main.c: 86:     if (time - lastTime < 100)
+[e $ ! < - -> _time `ui -> _lastTime `ui -> -> 100 `i `ui 1524  ]
+"87
+[; ;main.c: 87:         continue;
+[e $U 1521  ]
+[e :U 1524 ]
+"89
+[; ;main.c: 89:     lastTime = time;
+[e = _lastTime _time ]
+"90
+[; ;main.c: 90:     if(BEAT_detected())
+[e $ ! != -> ( _BEAT_detected ..  `i -> 0 `i 1525  ]
+"91
+[; ;main.c: 91:         LED_setColor(127,127,127,127);
+[e ( _LED_setColor (4 , , , -> -> 127 `i `uc -> -> 127 `i `uc -> -> 127 `i `uc -> -> 127 `i `uc ]
+[e $U 1526  ]
+"92
+[; ;main.c: 92:     else
+[e :U 1525 ]
+"93
+[; ;main.c: 93:         LED_setColor(0,0,0,0);
+[e ( _LED_setColor (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[e :U 1526 ]
+"109
+[; ;main.c: 109:     }
+}
+[e :U 1521 ]
+[e $U 1522  ]
+[e :U 1523 ]
+"110
+[; ;main.c: 110: }
+[e :UE 1520 ]
 }

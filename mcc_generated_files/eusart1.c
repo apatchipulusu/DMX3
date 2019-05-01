@@ -100,8 +100,8 @@ void EUSART1_Initialize(void)
     // TX9 8-bit; TX9D 0; SENDB sync_break_complete; TXEN disabled; SYNC asynchronous; BRGH hi_speed; CSRC slave; 
     TX1STA = 0x04;
 
-    // SP1BRGL 3; 
-    SP1BRGL = 0x03;
+    // SP1BRGL 31; 
+    SP1BRGL = 0x1F;
 
     // SP1BRGH 0; 
     SP1BRGH = 0x00;

@@ -10,10 +10,10 @@
 
 
 void TM1650_init(){
-    SYSTEM_Initialize();
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
-    writeData(0x24, 0x01);
+    //SYSTEM_Initialize();
+    TM1650_enable(true);
 }
 
 static void writeData(uint8_t address, uint8_t data){
@@ -107,4 +107,18 @@ void TM1650_fastPrintNum(uint16_t num){
         TM1650_setDigit(2, 'E', 0);
         TM1650_setDigit(3, 'E', 0);
     }
+}
+
+void TM1650_enable(bool enable){
+    if(enable == true){
+        writeData(0x24, 0x01);
+        displayState = true;
+    }else if(enable == false){
+        writeData(0x24, 0x00);
+        displayState = false;
+    }
+}
+
+bool TM1650_isEnabled(){
+    return displayState;
 }

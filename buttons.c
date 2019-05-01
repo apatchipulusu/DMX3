@@ -10,7 +10,7 @@
 
 #include "buttons.h"
 
-time_t lastTime;
+static time_t lastTime;
 
 void BUTTONS_task() {
     time_t time = CLOCK_getTime();
@@ -28,7 +28,6 @@ void BUTTONS_task() {
         // figure out if the button is currently activated or not
         if ((*(btn->port) & (1 << (btn->pin))) == 0) {
             btn->state = STATE_PRESSED;
-            
         } else {
             btn->state = STATE_UNPRESSED;            
         }

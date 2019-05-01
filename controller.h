@@ -40,5 +40,6 @@ void CONTROLLER_init();
 void address_inc();
 void address_dec();
 void CONTROLLER_task();
+time_t lastActiveTime;
 
 #endif	

@@ -18058,9 +18058,9 @@ extern __bank0 __bit __timeout;
 # 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 222 "mcc_generated_files/pin_manager.h"
+# 242 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 234 "mcc_generated_files/pin_manager.h"
+# 254 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mcc.h" 2
 
@@ -18222,6 +18222,83 @@ void I2C1_BusCollisionISR( void );
 void I2C1_ISR ( void );
 # 55 "mcc_generated_files/mcc.h" 2
 
+# 1 "mcc_generated_files/adcc.h" 1
+# 72 "mcc_generated_files/adcc.h"
+typedef uint16_t adc_result_t;
+
+typedef __uint24 uint24_t;
+# 89 "mcc_generated_files/adcc.h"
+typedef enum
+{
+    channel_ANB7 = 0xF,
+    channel_Vss = 0x3B,
+    channel_Temp_Sensor = 0x3C,
+    channel_DAC1_Output = 0x3D,
+    channel_FVR_Buffer1 = 0x3E,
+    channel_FVR_Buffer2 = 0x3F
+} adcc_channel_t;
+# 131 "mcc_generated_files/adcc.h"
+void ADCC_Initialize(void);
+# 160 "mcc_generated_files/adcc.h"
+void ADCC_StartConversion(adcc_channel_t channel);
+# 190 "mcc_generated_files/adcc.h"
+_Bool ADCC_IsConversionDone();
+# 222 "mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetConversionResult(void);
+# 253 "mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 278 "mcc_generated_files/adcc.h"
+void ADCC_StopConversion(void);
+# 305 "mcc_generated_files/adcc.h"
+void ADCC_SetStopOnInterrupt(void);
+# 330 "mcc_generated_files/adcc.h"
+void ADCC_DischargeSampleCapacitor(void);
+# 356 "mcc_generated_files/adcc.h"
+void ADCC_LoadAcquisitionRegister(uint16_t);
+# 382 "mcc_generated_files/adcc.h"
+void ADCC_SetPrechargeTime(uint16_t);
+# 407 "mcc_generated_files/adcc.h"
+void ADCC_SetRepeatCount(uint8_t);
+# 435 "mcc_generated_files/adcc.h"
+uint8_t ADCC_GetCurrentCountofConversions(void);
+# 459 "mcc_generated_files/adcc.h"
+void ADCC_ClearAccumulator(void);
+# 484 "mcc_generated_files/adcc.h"
+uint24_t ADCC_GetAccumulatorValue(void);
+# 512 "mcc_generated_files/adcc.h"
+_Bool ADCC_HasAccumulatorOverflowed(void);
+# 537 "mcc_generated_files/adcc.h"
+uint16_t ADCC_GetFilterValue(void);
+# 565 "mcc_generated_files/adcc.h"
+uint16_t ADCC_GetPreviousResult(void);
+# 591 "mcc_generated_files/adcc.h"
+void ADCC_DefineSetPoint(uint16_t);
+# 617 "mcc_generated_files/adcc.h"
+void ADCC_SetUpperThreshold(uint16_t);
+# 643 "mcc_generated_files/adcc.h"
+void ADCC_SetLowerThreshold(uint16_t);
+# 670 "mcc_generated_files/adcc.h"
+uint16_t ADCC_GetErrorCalculation(void);
+# 697 "mcc_generated_files/adcc.h"
+void ADCC_EnableDoubleSampling(void);
+# 721 "mcc_generated_files/adcc.h"
+void ADCC_EnableContinuousConversion(void);
+# 745 "mcc_generated_files/adcc.h"
+void ADCC_DisableContinuousConversion(void);
+# 773 "mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedUpperThreshold(void);
+# 801 "mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedLowerThreshold(void);
+# 828 "mcc_generated_files/adcc.h"
+uint8_t ADCC_GetConversionStageStatus(void);
+# 845 "mcc_generated_files/adcc.h"
+void ADCC_SetADTIInterruptHandler(void (* InterruptHandler)(void));
+# 861 "mcc_generated_files/adcc.h"
+void ADCC_ThresholdISR(void);
+# 879 "mcc_generated_files/adcc.h"
+void ADCC_DefaultInterruptHandler(void);
+# 56 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/eusart1.h" 1
 # 75 "mcc_generated_files/eusart1.h"
 typedef union {
@@ -18276,17 +18353,17 @@ void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
 # 515 "mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 56 "mcc_generated_files/mcc.h" 2
-# 71 "mcc_generated_files/mcc.h"
+# 57 "mcc_generated_files/mcc.h" 2
+# 72 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 84 "mcc_generated_files/mcc.h"
+# 85 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 97 "mcc_generated_files/mcc.h"
+# 98 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 50 "mcc_generated_files/interrupt_manager.c" 2
 
-# 1 "mcc_generated_files/../DMX_Source.h" 1
-# 42 "mcc_generated_files/../DMX_Source.h"
+# 1 "mcc_generated_files/../dmx.h" 1
+# 42 "mcc_generated_files/../dmx.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -18423,7 +18500,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 42 "mcc_generated_files/../DMX_Source.h" 2
+# 42 "mcc_generated_files/../dmx.h" 2
 
 
 
@@ -18437,13 +18514,21 @@ void LED_setColor(uint8_t R, uint8_t G, uint8_t B, uint8_t W);
 
 
 void UART_init();
+void DMX_init();
+void handler();
 
 typedef uint16_t time_t;
-# 65 "mcc_generated_files/../DMX_Source.h"
-uint8_t input[513];
-
-int point;
+extern uint8_t input[513];
 # 51 "mcc_generated_files/interrupt_manager.c" 2
+
+# 1 "mcc_generated_files/../clock.h" 1
+# 36 "mcc_generated_files/../clock.h"
+typedef uint16_t time_t;
+
+void CLOCK_init();
+time_t CLOCK_getTime();
+extern time_t ClockCurrentTime;
+# 52 "mcc_generated_files/interrupt_manager.c" 2
 
 
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
@@ -18459,22 +18544,25 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
         {
             I2C1_ISR();
         }
-# 74 "mcc_generated_files/interrupt_manager.c"
+        else if(PIE3bits.TX1IE == 1 && PIR3bits.TX1IF == 1)
+        {
+            EUSART1_TxDefaultInterruptHandler();
+        }
+        else if(PIE3bits.RC1IE == 1 && PIR3bits.RC1IF == 1)
+        {
+            EUSART1_RxDefaultInterruptHandler();
+        }
+        else if(PIR0bits.TMR0IF == 1){
+
+            ClockCurrentTime++;
+            PIR0bits.TMR0IF = 0;
+        }else if(PIE1bits.ADTIE == 1 && PIR1bits.ADTIF == 1)
+        {
+            ADCC_ThresholdISR();
+        }
         else
         {
-            if(RC1STAbits.OERR == 1){
-                RC1STAbits.CREN = 0;
-                RC1STAbits.CREN = 1;
-            }
-            uint8_t dataIn = RC1REG;
-            if(RC1STAbits.FERR == 1){
-                point = 0;
-            }else if(point > 513){
 
-            }else{
-                input[point] = dataIn;
-                point++;
-            }
         }
     }
     else
