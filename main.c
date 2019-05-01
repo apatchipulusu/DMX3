@@ -61,14 +61,10 @@ void main(void)
     BUTTONS_init();
     CONTROLLER_init();
     DMX_init();
-    //UART_init();
     LED_init();
     BEAT_init();
-    TRISC5 = 0;
-    LATC5 = 0;
-    //bool state = false;
-    time_t lastTime = 0;
-    //LED_setColor(0,0,0,0);
+    //TRISC5 = 0;
+    //LATC5 = 0;
     while (1)
     {
         BUTTONS_task();
@@ -76,27 +72,6 @@ void main(void)
         BEAT_task();
         DMX_Task();
         TM1650_fastPrintNum(address);
-        //LED_setColor(input[address],input[address+1],input[address+2],input[address+3]);
-        //LED_setColor(127,127,127,127);
-        
-    
-    //crude beat detector  
-    
-    
-    
-//        if(BEAT_detected() && state == false){
-//            LED_setColor(127,127,127,127);
-//            state = true;
-//        }else if(BEAT_detected() && state == true){
-//            LED_setColor(0,0,0,0);
-//            state = false;
-//        }
-        
-        
-        //Debug
-        //LED_setColor(input[1],input[2],input[3],input[4]);
-        //TM1650_fastPrintNum(input[8]);
-        //TM1650_fastPrintNum(1234);
     }
 }
 /**
